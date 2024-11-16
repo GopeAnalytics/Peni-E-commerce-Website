@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peni Group Buying</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Firebase SDKs -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js";
+        import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, signOut, onAuthStateChanged, sendEmailVerification } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-auth.js";
+        import { getFirestore } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
+      
+        const firebaseConfig = {
+          // Your Firebase configuration here
+          apiKey: "AIzaSyCV2nGYPbcE-ZLBdYDU2c83LZaEBkP911g",
+          authDomain: "penigroupbuying.firebaseapp.com",
+          projectId: "penigroupbuying",
+          storageBucket: "penigroupbuying.appspot.com",
+           messagingSenderId: "79611293172",
+          appId: "1:79611293172:web:041d17ef79f2521e079da1",
+          measurementId: "G-TLKQX3LTSR"
+        };
+      
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+        const db = getFirestore(app);
+      
+        window.auth = auth;
+        window.db = db;
+      </script>
+    <!-- PayPal SDK -->
+    <script src="https://www.paypal.com/sdk/js?client-id=YOUR_PAYPAL_CLIENT_ID"></script>
+</head>
+<body>
+    <header>
+        <img src="images/peni.png" alt="Peni Logo" id="logo">
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="product.html">Our Products</a></li>
+                <li><a href="cart.html">
+                    <img src="images/cart-icon.png" alt="Cart" id="cart-icon">
+                    <span id="cart-count">0</span>
+                </a></li>
+                <li><a href="#" onclick="toggleAuthModal()">
+                    <img src="images/profile-icon.png" alt="Profile" id="profile-icon">
+                    <!-- <span>Login</span>--->
+                </a></li>
+            </ul>
+        </nav>
+    </header>
+    
+
+    <section id="hero" style="background-image: url('images/homepage-background.jpg');">
+        <div class="hero-text">
+            <h1>Welcome to Peni Group Buying</h1>
+            <p>Making essential goods more affordable and accessible by leveraging the power of group buying and collective purchasing.</p>
+            <button onclick="location.href='product.html'">Shop Now</button>
+        </div>
+    </section>
+
+    <section id="values">
+        <h2>Our Values</h2>
+        <p>We are committed to offering significant savings through bulk purchases, revolutionizing how people shop for everyday essentials.</p>
+    </section>
+
+    <section id="testimonials">
+        <h2>Testimonials</h2>
+        <div class="testimonial">
+            <img src="images/testimonial-1.jpg" alt="Marrion Awuor">
+            <p>"Peni has saved me so much money on my groceries!"</p>
+        </div>
+        <div class="testimonial">
+            <img src="images/testimonial-2.jpg" alt="John Olweny">
+            <p>"Great products at unbeatable prices. Highly recommend!"</p>
+        </div>
+    </section>
+
+    <footer>
+        <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="#">Tools</a>
+                <ul>
+                    <li><a href="map.html">Map</a></li>
+                    <li><a href="https://wa.me/254703405769">WhatsApp Chat</a></li>
+                </ul>
+            </li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </footer>
+
+    <!-- Authentication Modal -->
+    <div id="auth-modal" style="display: none;"></div>
+        <div class="modal-content">
+            <span onclick="toggleAuthModal()" class="close">&times;</span>
+            <h2 id="auth-title">Login</h2>
+            <input type="email" id="email" placeholder="Email">
+            <input type="password" id="password" placeholder="Password">
+            <button onclick="login()" id="loginBtn">Login</button>
+            <button onclick="register()" id="registerBtn">Register</button>
+            <p id="auth-message"></p>
+            <p>Don't have an account? <a href="#" onclick="toggleAuthMode()">Register</a></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Cart - Peni Group Buying</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <img src="images/peni.png" alt="Peni Logo" id="logo">
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="product.html">Our Products</a></li>
+                <li><a href="cart.html">
+                    <img src="images/cart-icon.png" alt="Cart" id="cart-icon">
+                    <span id="cart-count">0</span>
+                </a></li>
+                <li><a href="#" onclick="toggleAuthModal()">
+                    <img src="images/profile-icon.png" alt="Profile" id="profile-icon">
+                </a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="cart">
+        <h2>Your Cart</h2>
+        <div id="cart-items">
+            <!-- Cart items will be dynamically inserted here -->
+        </div>
+        <button onclick="checkout()">Checkout</button>
+    </section>
+
+    <footer>
+        <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="#">Tools</a>
+                <ul>
+                    <li><a href="map.html">Map</a></li>
+                    <li><a href="https://wa.me/254703405769">WhatsApp Chat</a></li>
+                </ul>
+            </li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

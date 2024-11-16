@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Products - Peni Group Buying</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <img src="images/peni.png" alt="Peni Logo" id="logo">
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="product.html">Our Products</a></li>
+                <li><a href="cart.html">
+                    <img src="images/cart-icon.png" alt="Cart" id="cart-icon">
+                    <span id="cart-count">0</span>
+                </a></li>
+                <li><a href="#" onclick="toggleAuthModal()">
+                    <img src="images/profile-icon.png" alt="Profile" id="profile-icon">
+                </a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="product-search">
+        <input type="text" id="search-bar" placeholder="Search for a product...">
+        <select id="category-filter">
+            <option value="">All Categories</option>
+            <option value="vegetables">Vegetables</option>
+            <option value="fruits">Fruits</option>
+            <option value="vitamins">Vitamins</option>
+            <option value="spices">Spices</option>
+            <option value="proteins">Proteins</option>
+            <option value="carbohydrates">Carbohydrates</option>
+            <option value="food-additives">Food Additives</option>
+        </select>
+    </section>
+
+    <section id="products-on-offer">
+        <h2>Products on Offer</h2>
+        <div class="slideshow-container">
+            <div class="slides-track">
+            <div class="slides">
+                <div class="product">
+                    <img src="images/assorted-meat.webp" alt="Assorted Meat">
+                    <p>Assorted meats</p>
+                    <p class="price">Price: $50 <span class="discount">-20%</span></p>
+                    <p class="nutritional-benefits">Rich in protein and essential nutrients.</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+            <div class="slides">
+                <div class="product">
+                    <img src="images/cocoyam.webp" alt="Cocoyam">
+                    <p>Cocoyam</p>
+                    <p class="price">Price: $30 <span class="discount">-10%</span></p>
+                    <p class="nutritional-benefits">Good source of dietary fiber.</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+            <div class="slides">
+                <div class="product">
+                    <img src="images/food-sweeteners.webp" alt="Food Sweeteners">
+                    <p>Food Sweeteners</p>
+                    <p class="price">Price: $10 <span class="discount">-50%</span></p>
+                    <p class="nutritional-benefits">Rich in iron and calcium.</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            <!--</div>
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>-->
+    </section>
+
+    <section id="our-products">
+        <h2>Our products</h2>
+        <!-- Products that are not on offer go here -->
+        <div class="product" data-category="proteins">
+            <img src="images/assorted-meat.webp" alt="Assorted Meat">
+            <p>Assorted Meat</p>
+            <p class="price">Price: $50</p>
+            <p class="nutritional-benefits">Rich in protein and essential nutrients.</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product" data-category="proteins">
+            <img src="images/Stockfish-head.webp" alt="Stockfish-head">
+            <p>Stockfish-head</p>
+            <p class="price">Price: $50</p>
+            <p class="nutritional-benefits">Rich in protein and essential nutrients.</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+
+        <div class="product" data-category="carbohydrates">
+            <img src="images/cocoyam.webp" alt="Cocoyam">
+            <p>Cocoyam</p>
+            <p class="price">Price: $50</p>
+            <p class="nutritional-benefits">Good source of dietary fiber.</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product" data-category="carbohydrates">
+            <img src="images/sliced-raw-yams.webp" alt="sliced-raw-yams">
+            <p>sliced-raw-yams</p>
+            <p class="price">Price: $40</p>
+            <p class="nutritional-benefits">Good source of energy.</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+
+        <div class="product" data-category="vegetables">
+            <img src="images/fresh-tomatoes.webp" alt="fresh-tomatoes">
+            <p>fresh-tomatoes</p>
+            <p class="price">Price: $30</p>
+            <p class="nutritional-benefits">Good source of vitamin.</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+
+        <div class="product" data-category="food-additives">
+            <img src="images/garri-for-eba.webp" alt="garri-for-eba">
+            <p>garri-for-eba</p>
+            <p class="price">Price: $80</p>
+            <p class="nutritional-benefits">Makes food yummy.</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+
+        
+        <div class="product" data-category="food-additives">
+            <img src="images/food-sweeteners.webp" alt="food-sweeteners">
+            <p>food food-sweeteners</p>
+            <p class="price">Price: $10</p>
+            <p class="nutritional-benefits">Rich in iron and calcium.</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+
+        <div class="product" data-category="spices">
+            <img src="images/vegetable-oil.webp" alt="vegetable-oil">
+            <p>vegetable-oil</p>
+            <p class="price">Price: $100</p>
+            <p class="nutritional-benefits">It is cholestral free.</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+
+        <div class="product" data-category="vitamins">
+            <img src="images/palm-oil.webp" alt="palm-oil">
+            <p>palm-oil</p>
+            <p class="price">Price: $37</p>
+            <p class="nutritional-benefits">Rich in omega.</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+
+        <div class="product" data-category="vitamins">
+            <img src="images/onions.webp" alt="onions">
+            <p>Onions</p>
+            <p class="price">Price: $4</p>
+            <p class="nutritional-benefits">Good source of vitamin.</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <!-- Add more products as needed -->
+    </section>
+
+    <footer>
+        <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="#">Tools</a>
+                <ul>
+                    <li><a href="map.html">Map</a></li>
+                    <li><a href="https://wa.me/yourwhatsappnumber">WhatsApp Chat</a></li>
+                </ul>
+            </li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
